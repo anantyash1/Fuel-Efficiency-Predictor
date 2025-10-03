@@ -1,0 +1,479 @@
+make,model,year,engine_size,cylinders,transmission,fuel_type,combined_mpg
+Toyota,Prius,2023,1.8,4,CVT,Hybrid,56.0
+Toyota,Prius,2022,1.8,4,CVT,Hybrid,55.5
+Toyota,Prius,2021,1.8,4,CVT,Hybrid,55.0
+Toyota,Prius,2020,1.8,4,CVT,Hybrid,54.5
+Toyota,Prius,2022,1.8,4,CVT,Hybrid,56.0
+Toyota,Prius,2021,1.8,4,CVT,Hybrid,55.5
+Toyota,Prius,2020,1.8,4,CVT,Hybrid,55.0
+Toyota,Prius,2019,1.8,4,CVT,Hybrid,54.5
+Toyota,Prius,2021,1.8,4,CVT,Hybrid,54.0
+Toyota,Prius,2020,1.8,4,CVT,Hybrid,53.5
+Toyota,Prius,2019,1.8,4,CVT,Hybrid,53.0
+Toyota,Prius,2018,1.8,4,CVT,Hybrid,52.5
+Toyota,Camry,2023,2.5,4,8-Speed Automatic,Gasoline,32.0
+Toyota,Camry,2022,2.5,4,8-Speed Automatic,Gasoline,31.5
+Toyota,Camry,2021,2.5,4,8-Speed Automatic,Gasoline,31.0
+Toyota,Camry,2020,2.5,4,8-Speed Automatic,Gasoline,30.5
+Toyota,Camry Hybrid,2023,2.5,4,CVT,Hybrid,52.0
+Toyota,Camry Hybrid,2022,2.5,4,CVT,Hybrid,51.5
+Toyota,Camry Hybrid,2021,2.5,4,CVT,Hybrid,51.0
+Toyota,Camry Hybrid,2020,2.5,4,CVT,Hybrid,50.5
+Toyota,Corolla,2023,2.0,4,CVT,Gasoline,36.0
+Toyota,Corolla,2022,2.0,4,CVT,Gasoline,35.5
+Toyota,Corolla,2021,2.0,4,CVT,Gasoline,35.0
+Toyota,Corolla,2020,2.0,4,CVT,Gasoline,34.5
+Toyota,RAV4,2023,2.5,4,8-Speed Automatic,Gasoline,30.0
+Toyota,RAV4,2022,2.5,4,8-Speed Automatic,Gasoline,29.5
+Toyota,RAV4,2021,2.5,4,8-Speed Automatic,Gasoline,29.0
+Toyota,RAV4,2020,2.5,4,8-Speed Automatic,Gasoline,28.5
+Toyota,RAV4 Hybrid,2023,2.5,4,CVT,Hybrid,40.0
+Toyota,RAV4 Hybrid,2022,2.5,4,CVT,Hybrid,39.5
+Toyota,RAV4 Hybrid,2021,2.5,4,CVT,Hybrid,39.0
+Toyota,RAV4 Hybrid,2020,2.5,4,CVT,Hybrid,38.5
+Toyota,Highlander,2023,3.5,6,8-Speed Automatic,Gasoline,24.0
+Toyota,Highlander,2022,3.5,6,8-Speed Automatic,Gasoline,23.5
+Toyota,Highlander,2021,3.5,6,8-Speed Automatic,Gasoline,23.0
+Toyota,Highlander,2020,3.5,6,8-Speed Automatic,Gasoline,22.5
+Honda,Civic,2023,2.0,4,CVT,Gasoline,36.0
+Honda,Civic,2022,2.0,4,CVT,Gasoline,35.5
+Honda,Civic,2021,2.0,4,CVT,Gasoline,35.0
+Honda,Civic,2020,2.0,4,CVT,Gasoline,34.5
+Honda,Civic,2022,2.0,4,Manual,Gasoline,35.0
+Honda,Civic,2021,2.0,4,Manual,Gasoline,34.5
+Honda,Civic,2020,2.0,4,Manual,Gasoline,34.0
+Honda,Civic,2019,2.0,4,Manual,Gasoline,33.5
+Honda,Accord,2023,1.5,4,CVT,Gasoline,36.0
+Honda,Accord,2022,1.5,4,CVT,Gasoline,35.5
+Honda,Accord,2021,1.5,4,CVT,Gasoline,35.0
+Honda,Accord,2020,1.5,4,CVT,Gasoline,34.5
+Honda,Accord Hybrid,2023,2.0,4,CVT,Hybrid,48.0
+Honda,Accord Hybrid,2022,2.0,4,CVT,Hybrid,47.5
+Honda,Accord Hybrid,2021,2.0,4,CVT,Hybrid,47.0
+Honda,Accord Hybrid,2020,2.0,4,CVT,Hybrid,46.5
+Honda,CR-V,2023,1.5,4,CVT,Gasoline,29.0
+Honda,CR-V,2022,1.5,4,CVT,Gasoline,28.5
+Honda,CR-V,2021,1.5,4,CVT,Gasoline,28.0
+Honda,CR-V,2020,1.5,4,CVT,Gasoline,27.5
+Honda,Pilot,2023,3.5,6,9-Speed Automatic,Gasoline,23.0
+Honda,Pilot,2022,3.5,6,9-Speed Automatic,Gasoline,22.5
+Honda,Pilot,2021,3.5,6,9-Speed Automatic,Gasoline,22.0
+Honda,Pilot,2020,3.5,6,9-Speed Automatic,Gasoline,21.5
+Honda,Insight,2022,1.5,4,CVT,Hybrid,52.0
+Honda,Insight,2021,1.5,4,CVT,Hybrid,51.5
+Honda,Insight,2020,1.5,4,CVT,Hybrid,51.0
+Honda,Insight,2019,1.5,4,CVT,Hybrid,50.5
+Ford,F-150,2023,3.3,6,10-Speed Automatic,Gasoline,21.0
+Ford,F-150,2022,3.3,6,10-Speed Automatic,Gasoline,20.5
+Ford,F-150,2021,3.3,6,10-Speed Automatic,Gasoline,20.0
+Ford,F-150,2020,3.3,6,10-Speed Automatic,Gasoline,19.5
+Ford,F-150,2023,2.7,6,10-Speed Automatic,Gasoline,22.0
+Ford,F-150,2022,2.7,6,10-Speed Automatic,Gasoline,21.5
+Ford,F-150,2021,2.7,6,10-Speed Automatic,Gasoline,21.0
+Ford,F-150,2020,2.7,6,10-Speed Automatic,Gasoline,20.5
+Ford,F-150,2023,5.0,8,10-Speed Automatic,Gasoline,20.0
+Ford,F-150,2022,5.0,8,10-Speed Automatic,Gasoline,19.5
+Ford,F-150,2021,5.0,8,10-Speed Automatic,Gasoline,19.0
+Ford,F-150,2020,5.0,8,10-Speed Automatic,Gasoline,18.5
+Ford,Escape,2023,1.5,3,8-Speed Automatic,Gasoline,30.0
+Ford,Escape,2022,1.5,3,8-Speed Automatic,Gasoline,29.5
+Ford,Escape,2021,1.5,3,8-Speed Automatic,Gasoline,29.0
+Ford,Escape,2020,1.5,3,8-Speed Automatic,Gasoline,28.5
+Ford,Mustang,2023,2.3,4,Manual,Gasoline,25.0
+Ford,Mustang,2022,2.3,4,Manual,Gasoline,24.5
+Ford,Mustang,2021,2.3,4,Manual,Gasoline,24.0
+Ford,Mustang,2020,2.3,4,Manual,Gasoline,23.5
+Ford,Mustang,2023,5.0,8,Manual,Gasoline,19.0
+Ford,Mustang,2022,5.0,8,Manual,Gasoline,18.5
+Ford,Mustang,2021,5.0,8,Manual,Gasoline,18.0
+Ford,Mustang,2020,5.0,8,Manual,Gasoline,17.5
+Ford,Fusion Hybrid,2020,2.0,4,CVT,Hybrid,42.0
+Ford,Fusion Hybrid,2019,2.0,4,CVT,Hybrid,41.5
+Ford,Fusion Hybrid,2018,2.0,4,CVT,Hybrid,41.0
+Ford,Fusion Hybrid,2017,2.0,4,CVT,Hybrid,40.5
+Chevrolet,Silverado 1500,2023,2.7,4,8-Speed Automatic,Gasoline,21.0
+Chevrolet,Silverado 1500,2022,2.7,4,8-Speed Automatic,Gasoline,20.5
+Chevrolet,Silverado 1500,2021,2.7,4,8-Speed Automatic,Gasoline,20.0
+Chevrolet,Silverado 1500,2020,2.7,4,8-Speed Automatic,Gasoline,19.5
+Chevrolet,Silverado 1500,2023,5.3,8,8-Speed Automatic,Gasoline,18.0
+Chevrolet,Silverado 1500,2022,5.3,8,8-Speed Automatic,Gasoline,17.5
+Chevrolet,Silverado 1500,2021,5.3,8,8-Speed Automatic,Gasoline,17.0
+Chevrolet,Silverado 1500,2020,5.3,8,8-Speed Automatic,Gasoline,16.5
+Chevrolet,Malibu,2023,1.5,4,CVT,Gasoline,32.0
+Chevrolet,Malibu,2022,1.5,4,CVT,Gasoline,31.5
+Chevrolet,Malibu,2021,1.5,4,CVT,Gasoline,31.0
+Chevrolet,Malibu,2020,1.5,4,CVT,Gasoline,30.5
+Chevrolet,Equinox,2023,1.5,4,6-Speed Automatic,Gasoline,28.0
+Chevrolet,Equinox,2022,1.5,4,6-Speed Automatic,Gasoline,27.5
+Chevrolet,Equinox,2021,1.5,4,6-Speed Automatic,Gasoline,27.0
+Chevrolet,Equinox,2020,1.5,4,6-Speed Automatic,Gasoline,26.5
+Chevrolet,Tahoe,2023,5.3,8,10-Speed Automatic,Gasoline,16.0
+Chevrolet,Tahoe,2022,5.3,8,10-Speed Automatic,Gasoline,15.5
+Chevrolet,Tahoe,2021,5.3,8,10-Speed Automatic,Gasoline,15.0
+Chevrolet,Tahoe,2020,5.3,8,10-Speed Automatic,Gasoline,14.5
+Nissan,Altima,2023,2.5,4,CVT,Gasoline,32.0
+Nissan,Altima,2022,2.5,4,CVT,Gasoline,31.5
+Nissan,Altima,2021,2.5,4,CVT,Gasoline,31.0
+Nissan,Altima,2020,2.5,4,CVT,Gasoline,30.5
+Nissan,Sentra,2023,2.0,4,CVT,Gasoline,33.0
+Nissan,Sentra,2022,2.0,4,CVT,Gasoline,32.5
+Nissan,Sentra,2021,2.0,4,CVT,Gasoline,32.0
+Nissan,Sentra,2020,2.0,4,CVT,Gasoline,31.5
+Nissan,Rogue,2023,2.5,4,CVT,Gasoline,30.0
+Nissan,Rogue,2022,2.5,4,CVT,Gasoline,29.5
+Nissan,Rogue,2021,2.5,4,CVT,Gasoline,29.0
+Nissan,Rogue,2020,2.5,4,CVT,Gasoline,28.5
+Nissan,Pathfinder,2023,3.5,6,9-Speed Automatic,Gasoline,24.0
+Nissan,Pathfinder,2022,3.5,6,9-Speed Automatic,Gasoline,23.5
+Nissan,Pathfinder,2021,3.5,6,9-Speed Automatic,Gasoline,23.0
+Nissan,Pathfinder,2020,3.5,6,9-Speed Automatic,Gasoline,22.5
+Nissan,Leaf,2023,0.0,0,Single-Speed,Electric,111.0
+Nissan,Leaf,2022,0.0,0,Single-Speed,Electric,110.5
+Nissan,Leaf,2021,0.0,0,Single-Speed,Electric,110.0
+Nissan,Leaf,2020,0.0,0,Single-Speed,Electric,109.5
+BMW,3 Series,2023,2.0,4,8-Speed Automatic,Gasoline,30.0
+BMW,3 Series,2022,2.0,4,8-Speed Automatic,Gasoline,29.5
+BMW,3 Series,2021,2.0,4,8-Speed Automatic,Gasoline,29.0
+BMW,3 Series,2020,2.0,4,8-Speed Automatic,Gasoline,28.5
+BMW,X3,2023,2.0,4,8-Speed Automatic,Gasoline,25.0
+BMW,X3,2022,2.0,4,8-Speed Automatic,Gasoline,24.5
+BMW,X3,2021,2.0,4,8-Speed Automatic,Gasoline,24.0
+BMW,X3,2020,2.0,4,8-Speed Automatic,Gasoline,23.5
+BMW,X5,2023,3.0,6,8-Speed Automatic,Gasoline,23.0
+BMW,X5,2022,3.0,6,8-Speed Automatic,Gasoline,22.5
+BMW,X5,2021,3.0,6,8-Speed Automatic,Gasoline,22.0
+BMW,X5,2020,3.0,6,8-Speed Automatic,Gasoline,21.5
+BMW,i4,2023,0.0,0,Single-Speed,Electric,108.0
+BMW,i4,2022,0.0,0,Single-Speed,Electric,107.5
+BMW,i4,2021,0.0,0,Single-Speed,Electric,107.0
+BMW,i4,2020,0.0,0,Single-Speed,Electric,106.5
+Mercedes-Benz,C-Class,2023,2.0,4,9-Speed Automatic,Gasoline,26.0
+Mercedes-Benz,C-Class,2022,2.0,4,9-Speed Automatic,Gasoline,25.5
+Mercedes-Benz,C-Class,2021,2.0,4,9-Speed Automatic,Gasoline,25.0
+Mercedes-Benz,C-Class,2020,2.0,4,9-Speed Automatic,Gasoline,24.5
+Mercedes-Benz,GLC,2023,2.0,4,9-Speed Automatic,Gasoline,25.0
+Mercedes-Benz,GLC,2022,2.0,4,9-Speed Automatic,Gasoline,24.5
+Mercedes-Benz,GLC,2021,2.0,4,9-Speed Automatic,Gasoline,24.0
+Mercedes-Benz,GLC,2020,2.0,4,9-Speed Automatic,Gasoline,23.5
+Mercedes-Benz,EQS,2023,0.0,0,Single-Speed,Electric,107.0
+Mercedes-Benz,EQS,2022,0.0,0,Single-Speed,Electric,106.5
+Mercedes-Benz,EQS,2021,0.0,0,Single-Speed,Electric,106.0
+Mercedes-Benz,EQS,2020,0.0,0,Single-Speed,Electric,105.5
+Tesla,Model 3,2023,0.0,0,Single-Speed,Electric,129.0
+Tesla,Model 3,2022,0.0,0,Single-Speed,Electric,128.5
+Tesla,Model 3,2021,0.0,0,Single-Speed,Electric,128.0
+Tesla,Model 3,2020,0.0,0,Single-Speed,Electric,127.5
+Tesla,Model Y,2023,0.0,0,Single-Speed,Electric,122.0
+Tesla,Model Y,2022,0.0,0,Single-Speed,Electric,121.5
+Tesla,Model Y,2021,0.0,0,Single-Speed,Electric,121.0
+Tesla,Model Y,2020,0.0,0,Single-Speed,Electric,120.5
+Tesla,Model S,2023,0.0,0,Single-Speed,Electric,118.0
+Tesla,Model S,2022,0.0,0,Single-Speed,Electric,117.5
+Tesla,Model S,2021,0.0,0,Single-Speed,Electric,117.0
+Tesla,Model S,2020,0.0,0,Single-Speed,Electric,116.5
+Tesla,Model X,2023,0.0,0,Single-Speed,Electric,100.0
+Tesla,Model X,2022,0.0,0,Single-Speed,Electric,99.5
+Tesla,Model X,2021,0.0,0,Single-Speed,Electric,99.0
+Tesla,Model X,2020,0.0,0,Single-Speed,Electric,98.5
+Hyundai,Elantra,2023,2.0,4,CVT,Gasoline,35.0
+Hyundai,Elantra,2022,2.0,4,CVT,Gasoline,34.5
+Hyundai,Elantra,2021,2.0,4,CVT,Gasoline,34.0
+Hyundai,Elantra,2020,2.0,4,CVT,Gasoline,33.5
+Hyundai,Sonata Hybrid,2023,2.0,4,6-Speed Automatic,Hybrid,47.0
+Hyundai,Sonata Hybrid,2022,2.0,4,6-Speed Automatic,Hybrid,46.5
+Hyundai,Sonata Hybrid,2021,2.0,4,6-Speed Automatic,Hybrid,46.0
+Hyundai,Sonata Hybrid,2020,2.0,4,6-Speed Automatic,Hybrid,45.5
+Hyundai,Tucson,2023,2.5,4,8-Speed Automatic,Gasoline,29.0
+Hyundai,Tucson,2022,2.5,4,8-Speed Automatic,Gasoline,28.5
+Hyundai,Tucson,2021,2.5,4,8-Speed Automatic,Gasoline,28.0
+Hyundai,Tucson,2020,2.5,4,8-Speed Automatic,Gasoline,27.5
+Hyundai,IONIQ 5,2023,0.0,0,Single-Speed,Electric,105.0
+Hyundai,IONIQ 5,2022,0.0,0,Single-Speed,Electric,104.5
+Hyundai,IONIQ 5,2021,0.0,0,Single-Speed,Electric,104.0
+Hyundai,IONIQ 5,2020,0.0,0,Single-Speed,Electric,103.5
+Audi,A4,2023,2.0,4,7-Speed Automatic,Gasoline,27.0
+Audi,A4,2022,2.0,4,7-Speed Automatic,Gasoline,26.5
+Audi,A4,2021,2.0,4,7-Speed Automatic,Gasoline,26.0
+Audi,A4,2020,2.0,4,7-Speed Automatic,Gasoline,25.5
+Audi,Q5,2023,2.0,4,7-Speed Automatic,Gasoline,25.0
+Audi,Q5,2022,2.0,4,7-Speed Automatic,Gasoline,24.5
+Audi,Q5,2021,2.0,4,7-Speed Automatic,Gasoline,24.0
+Audi,Q5,2020,2.0,4,7-Speed Automatic,Gasoline,23.5
+Audi,e-tron,2023,0.0,0,Single-Speed,Electric,78.0
+Audi,e-tron,2022,0.0,0,Single-Speed,Electric,77.5
+Audi,e-tron,2021,0.0,0,Single-Speed,Electric,77.0
+Audi,e-tron,2020,0.0,0,Single-Speed,Electric,76.5
+Subaru,Outback,2023,2.5,4,CVT,Gasoline,29.0
+Subaru,Outback,2022,2.5,4,CVT,Gasoline,28.5
+Subaru,Outback,2021,2.5,4,CVT,Gasoline,28.0
+Subaru,Outback,2020,2.5,4,CVT,Gasoline,27.5
+Subaru,Forester,2023,2.5,4,CVT,Gasoline,29.0
+Subaru,Forester,2022,2.5,4,CVT,Gasoline,28.5
+Subaru,Forester,2021,2.5,4,CVT,Gasoline,28.0
+Subaru,Forester,2020,2.5,4,CVT,Gasoline,27.5
+Subaru,Impreza,2023,2.0,4,CVT,Gasoline,31.0
+Subaru,Impreza,2022,2.0,4,CVT,Gasoline,30.5
+Subaru,Impreza,2021,2.0,4,CVT,Gasoline,30.0
+Subaru,Impreza,2020,2.0,4,CVT,Gasoline,29.5
+Mazda,Mazda3,2023,2.5,4,6-Speed Automatic,Gasoline,30.0
+Mazda,Mazda3,2022,2.5,4,6-Speed Automatic,Gasoline,29.5
+Mazda,Mazda3,2021,2.5,4,6-Speed Automatic,Gasoline,29.0
+Mazda,Mazda3,2020,2.5,4,6-Speed Automatic,Gasoline,28.5
+Mazda,CX-5,2023,2.5,4,6-Speed Automatic,Gasoline,27.0
+Mazda,CX-5,2022,2.5,4,6-Speed Automatic,Gasoline,26.5
+Mazda,CX-5,2021,2.5,4,6-Speed Automatic,Gasoline,26.0
+Mazda,CX-5,2020,2.5,4,6-Speed Automatic,Gasoline,25.5
+Mazda,MX-30,2023,0.0,0,Single-Speed,Electric,100.0
+Mazda,MX-30,2022,0.0,0,Single-Speed,Electric,99.5
+Mazda,MX-30,2021,0.0,0,Single-Speed,Electric,99.0
+Mazda,MX-30,2020,0.0,0,Single-Speed,Electric,98.5
+Toyota,Prius,2023,1.8496714153011233,4,CVT,Hybrid,55.72347139765763
+Toyota,Prius,2023,1.8647688538100693,4,CVT,Hybrid,59.04605971281605
+Toyota,Prius,2023,1.7765846625276664,4,CVT,Hybrid,55.53172608610164
+Toyota,Prius,2023,1.9579212815507392,4,CVT,Hybrid,57.53486945830582
+Toyota,Prius,2023,1.753052561406505,4,CVT,Hybrid,57.08512008717193
+Toyota,Prius,2022,1.7536582307187538,4,CVT,Hybrid,54.56854049285948
+Toyota,Prius,2022,1.8241962271566035,4,CVT,Hybrid,51.6734395106844
+Toyota,Prius,2022,1.6275082167486967,4,CVT,Hybrid,54.375424941518055
+Toyota,Prius,2022,1.6987168879665577,4,CVT,Hybrid,56.128494665190544
+Toyota,Prius,2022,1.7091975924478788,4,CVT,Hybrid,52.67539259732942
+Toyota,Prius,2021,1.9465648768921555,4,CVT,Hybrid,54.54844739902693
+Toyota,Prius,2021,1.8067528204687924,4,CVT,Hybrid,52.15050362757309
+Toyota,Prius,2021,1.7455617275474817,4,CVT,Hybrid,55.22184517941973
+Toyota,Prius,2021,1.6849006422577697,4,CVT,Hybrid,55.75139603669135
+Toyota,Prius,2021,1.7399361310081196,4,CVT,Hybrid,54.41661250041345
+Toyota,Prius,2020,1.7398293387770603,4,CVT,Hybrid,58.20455636901787
+Toyota,Prius,2020,1.7986502775262065,4,CVT,Hybrid,52.3845781420882
+Toyota,Prius,2020,1.882254491210319,4,CVT,Hybrid,52.058312700057954
+Toyota,Prius,2020,1.8208863595004756,4,CVT,Hybrid,50.58065975224045
+Toyota,Prius,2020,1.667181395110157,4,CVT,Hybrid,54.89372247173824
+Toyota,Prius,2022,1.873846657999541,4,CVT,Hybrid,56.34273656237994
+Toyota,Prius,2022,1.788435171761176,4,CVT,Hybrid,55.39779260882142
+Toyota,Prius,2022,1.6521478009632573,4,CVT,Hybrid,54.560311583210584
+Toyota,Prius,2022,1.7539361229040213,4,CVT,Hybrid,58.11424445243783
+Toyota,Prius,2022,1.8343618289568462,4,CVT,Hybrid,52.47391968927453
+Toyota,Prius,2021,1.8324083969394795,4,CVT,Hybrid,54.72983543916737
+Toyota,Prius,2021,1.732307799969404,4,CVT,Hybrid,56.72335257768174
+Toyota,Prius,2021,1.903099952249595,4,CVT,Hybrid,57.3625602382324
+Toyota,Prius,2021,1.716078247677736,4,CVT,Hybrid,54.88157524829757
+Toyota,Prius,2021,1.8331263431403564,4,CVT,Hybrid,57.45109025424472
+Toyota,Prius,2020,1.752082576215471,4,CVT,Hybrid,54.62868204667237
+Toyota,Prius,2020,1.6893665025993971,4,CVT,Hybrid,52.60758675183866
+Toyota,Prius,2020,1.88125258223942,4,CVT,Hybrid,57.71248005714165
+Toyota,Prius,2020,1.7927989878419666,4,CVT,Hybrid,57.00706579578405
+Toyota,Prius,2020,1.8361636025047634,4,CVT,Hybrid,53.709760490789755
+Toyota,Prius,2019,1.8361395605508415,4,CVT,Hybrid,57.57607313293194
+Toyota,Prius,2019,1.7964173960890049,4,CVT,Hybrid,57.62928731162801
+Toyota,Prius,2019,1.5380254895910257,4,CVT,Hybrid,56.14380500875045
+Toyota,Prius,2019,1.8087047068238171,4,CVT,Hybrid,53.901985299068265
+Toyota,Prius,2019,1.8091760776535504,4,CVT,Hybrid,50.524862170798215
+Toyota,Prius,2021,1.778032811216249,4,CVT,Hybrid,54.71422514302349
+Toyota,Prius,2021,1.9477894044741517,4,CVT,Hybrid,52.9634595634527
+Toyota,Prius,2021,1.7191506397106813,4,CVT,Hybrid,52.99648591283093
+Toyota,Prius,2021,1.8915402117702074,4,CVT,Hybrid,54.65750221931937
+Toyota,Prius,2021,1.7470239796232963,4,CVT,Hybrid,55.02653486622671
+Toyota,Prius,2020,1.8097077549348042,4,CVT,Hybrid,55.43728998106578
+Toyota,Prius,2020,1.7297946906122648,4,CVT,Hybrid,52.844675706804466
+Toyota,Prius,2020,1.7607891846867842,4,CVT,Hybrid,50.57297010373576
+Toyota,Prius,2020,1.8296120277064576,4,CVT,Hybrid,54.022110544359776
+Toyota,Prius,2020,1.800511345664246,4,CVT,Hybrid,53.030825733249706
+Toyota,Prius,2019,1.6584629257949586,4,CVT,Hybrid,52.15870935446928
+Toyota,Prius,2019,1.765728548347323,4,CVT,Hybrid,51.39544546155676
+Toyota,Prius,2019,1.7838714288333992,4,CVT,Hybrid,53.80810171362908
+Toyota,Prius,2019,1.9886185901210531,4,CVT,Hybrid,53.34915562566368
+Toyota,Prius,2019,1.8257550390722765,4,CVT,Hybrid,52.85110816846767
+Toyota,Prius,2018,1.6081228784700958,4,CVT,Hybrid,52.44697224910156
+Toyota,Prius,2018,1.8060230209941026,4,CVT,Hybrid,57.42648422497057
+Toyota,Prius,2018,1.7807639035218878,4,CVT,Hybrid,53.10309468466723
+Toyota,Prius,2018,1.7965288230294758,4,CVT,Hybrid,50.162643924760935
+Toyota,Prius,2018,1.9142822814515021,4,CVT,Hybrid,54.00386606537355
+Toyota,Camry,2023,2.5791031947043046,4,8-Speed Automatic,Gasoline,30.18122509041052
+Toyota,Camry,2023,2.6402794310936097,4,8-Speed Automatic,Gasoline,29.19629787441544
+Toyota,Camry,2023,2.558685709380027,4,8-Speed Automatic,Gasoline,36.380911251619956
+Toyota,Camry,2023,2.4009463674869314,4,8-Speed Automatic,Gasoline,30.867404540794457
+Toyota,Camry,2023,2.509965136508764,4,8-Speed Automatic,Gasoline,30.9930486917676
+Toyota,Camry,2022,2.344933656893387,4,8-Speed Automatic,Gasoline,31.637125949612056
+Toyota,Camry,2022,2.3937696286273895,4,8-Speed Automatic,Gasoline,32.447184861270365
+Toyota,Camry,2022,2.4080575765766197,4,8-Speed Automatic,Gasoline,34.599868810035076
+Toyota,Camry,2022,2.421674670766376,4,8-Speed Automatic,Gasoline,30.85587696758865
+Toyota,Camry,2022,2.581351721736967,4,8-Speed Automatic,Gasoline,29.03827136713209
+Toyota,Camry,2021,2.522745993460413,4,8-Speed Automatic,Gasoline,33.614285508564855
+Toyota,Camry,2021,2.3392516765438773,4,8-Speed Automatic,Gasoline,31.36926771706461
+Toyota,Camry,2021,2.5259882794248423,4,8-Speed Automatic,Gasoline,32.56364574355462
+Toyota,Camry,2021,2.376304928912192,4,8-Speed Automatic,Gasoline,28.359086773831446
+Toyota,Camry,2021,2.55219415656169,4,8-Speed Automatic,Gasoline,31.593969346466373
+Toyota,Camry,2020,2.5250492850345876,4,8-Speed Automatic,Gasoline,31.19289641899395
+Toyota,Camry,2020,2.431997527842151,4,8-Speed Automatic,Gasoline,30.964507394322005
+Toyota,Camry,2020,2.5293072473298683,4,8-Speed Automatic,Gasoline,29.071297163947264
+Toyota,Camry,2020,2.6865774511144758,4,8-Speed Automatic,Gasoline,31.447665841823575
+Toyota,Camry,2020,2.380869650279735,4,8-Speed Automatic,Gasoline,31.81310721726766
+Toyota,Camry Hybrid,2023,2.402531832977268,4,CVT,Hybrid,53.57416920748491
+Toyota,Camry Hybrid,2023,2.61585955790074,4,CVT,Hybrid,50.35863536329658
+Toyota,Camry Hybrid,2023,2.596337612924432,4,CVT,Hybrid,52.825561853873
+Toyota,Camry Hybrid,2023,2.582206015999449,4,CVT,Hybrid,55.7935859653079
+Toyota,Camry Hybrid,2023,2.475461188399713,4,CVT,Hybrid,50.49252767128502
+Toyota,Camry Hybrid,2022,2.411048557037448,4,CVT,Hybrid,49.868379430069126
+Toyota,Camry Hybrid,2022,2.4922898290585898,4,CVT,Hybrid,52.18230394963329
+Toyota,Camry Hybrid,2022,2.527669079933002,4,CVT,Hybrid,53.15436649807205
+Toyota,Camry Hybrid,2022,2.501300189187791,4,CVT,Hybrid,54.407068154314636
+Toyota,Camry Hybrid,2022,2.4735343166762043,4,CVT,Hybrid,56.94033833317924
+Toyota,Camry Hybrid,2021,2.5625667347765004,4,CVT,Hybrid,49.285684887167434
+Toyota,Camry Hybrid,2021,2.392910750193889,4,CVT,Hybrid,51.964944830486374
+Toyota,Camry Hybrid,2021,2.477653721467415,4,CVT,Hybrid,52.42800098818418
+Toyota,Camry Hybrid,2021,2.5473237624573546,4,CVT,Hybrid,50.85434217468625
+Toyota,Camry Hybrid,2021,2.4153206281931596,4,CVT,Hybrid,47.97030555062827
+Toyota,Camry Hybrid,2020,2.4553485047932977,4,CVT,Hybrid,52.21279758864694
+Toyota,Camry Hybrid,2020,2.5214093744130204,4,CVT,Hybrid,48.00852244257602
+Toyota,Camry Hybrid,2020,2.517318092585118,4,CVT,Hybrid,51.27063475945767
+Toyota,Camry Hybrid,2020,2.411614256379887,4,CVT,Hybrid,50.80745021189106
+Toyota,Camry Hybrid,2020,2.5058208718446,4,CVT,Hybrid,48.214059404338755
+Toyota,Corolla,2023,2.0357787360348283,4,CVT,Gasoline,37.12156905273647
+Toyota,Corolla,2023,2.1083051243175275,4,CVT,Gasoline,38.10760410406981
+Toyota,Corolla,2023,1.862233063204291,4,CVT,Gasoline,34.124349920169756
+Toyota,Corolla,2023,2.051503526720866,4,CVT,Gasoline,37.027571901824416
+Toyota,Corolla,2023,2.051504768630605,4,CVT,Gasoline,43.705462981309445
+Toyota,Corolla,2022,2.0570890510693167,4,CVT,Gasoline,37.771131280361196
+Toyota,Corolla,2022,2.09540017634932,4,CVT,Gasoline,36.8027825026116
+Toyota,Corolla,2022,1.9684730755359654,4,CVT,Gasoline,37.01793844098653
+Toyota,Corolla,2022,1.9227174785462429,4,CVT,Gasoline,35.02636278651998
+Toyota,Corolla,2022,1.9514636452170897,4,CVT,Gasoline,35.663748278772644
+Toyota,Corolla,2021,2.231465856667351,4,CVT,Gasoline,31.265469614816503
+Toyota,Corolla,2021,2.0686260190374512,4,CVT,Gasoline,31.774568257620697
+Toyota,Corolla,2021,1.9528068134210566,4,CVT,Gasoline,37.17790119393473
+Toyota,Corolla,2021,2.0064280019095464,4,CVT,Gasoline,32.844510444141385
+Toyota,Corolla,2021,1.928469629074003,4,CVT,Gasoline,36.35919549786935
+Toyota,Corolla,2020,1.9269633368282864,4,CVT,Gasoline,34.93291717916395
+Toyota,Corolla,2020,2.0045571839903813,4,CVT,Gasoline,33.196799304788364
+Toyota,Corolla,2020,2.2143944089325327,4,CVT,Gasoline,35.76783804463602
+Toyota,Corolla,2020,1.7974857413342393,4,CVT,Gasoline,34.872908629538856
+Toyota,Corolla,2020,1.9338213535231612,4,CVT,Gasoline,36.20486666959245
+Toyota,RAV4,2023,2.42074792615673,4,8-Speed Automatic,Gasoline,29.7705271170662
+Toyota,RAV4,2023,2.5504987278980455,4,8-Speed Automatic,Gasoline,31.731510388340244
+Toyota,RAV4,2023,2.3799703592944224,4,8-Speed Automatic,Gasoline,29.330997528318104
+Toyota,RAV4,2023,2.4525054688839045,4,8-Speed Automatic,Gasoline,28.693341534852575
+Toyota,RAV4,2023,2.6765454240281095,4,8-Speed Automatic,Gasoline,30.80996342192191
+Toyota,RAV4,2022,2.3739116045664956,4,8-Speed Automatic,Gasoline,31.335723894109552
+Toyota,RAV4,2022,2.7122156197012632,4,8-Speed Automatic,Gasoline,31.564930521102294
+Toyota,RAV4,2022,2.3480630034045986,4,8-Speed Automatic,Gasoline,28.5315318542675
+Toyota,RAV4,2022,2.6266911149186623,4,8-Speed Automatic,Gasoline,28.08466106876244
+Toyota,RAV4,2022,2.544381942814623,4,8-Speed Automatic,Gasoline,31.049268106858673
+Toyota,RAV4,2021,2.4073069528421915,4,8-Speed Automatic,Gasoline,28.8809492878764
+Toyota,RAV4,2021,2.1758732659930926,4,8-Speed Automatic,Gasoline,26.95122471733142
+Toyota,RAV4,2021,2.474743184860684,4,8-Speed Automatic,Gasoline,26.504433636070303
+Toyota,RAV4,2021,2.6632411303931636,4,8-Speed Automatic,Gasoline,26.139717244078735
+Toyota,RAV4,2021,2.4559955513303016,4,8-Speed Automatic,Gasoline,29.261481154572184
+Toyota,RAV4,2020,2.6441273289066114,4,8-Speed Automatic,Gasoline,25.628275697641122
+Toyota,RAV4,2020,2.616316375215496,4,8-Speed Automatic,Gasoline,28.520466122039174
+Toyota,RAV4,2020,2.4018491348952047,4,8-Speed Automatic,Gasoline,29.424206948526543
+Toyota,RAV4,2020,2.519905969557347,4,8-Speed Automatic,Gasoline,27.29956624568241
+Toyota,RAV4,2020,2.506980208499002,4,8-Speed Automatic,Gasoline,27.72937280627648
+Toyota,RAV4 Hybrid,2023,2.5113517345251246,4,CVT,Hybrid,41.3242613490421
+Toyota,RAV4 Hybrid,2023,2.658601681614535,4,CVT,Hybrid,37.524369002346305
+Toyota,RAV4 Hybrid,2023,2.713303337465627,4,CVT,Hybrid,36.095824400954996
+Toyota,RAV4 Hybrid,2023,2.484821490496442,4,CVT,Hybrid,41.17663441296915
+Toyota,RAV4 Hybrid,2023,2.5280991867735034,4,CVT,Hybrid,38.754600960358815
+Toyota,RAV4 Hybrid,2022,2.4791877749642723,4,CVT,Hybrid,38.51399813068233
+Toyota,RAV4 Hybrid,2022,2.4410635243055787,4,CVT,Hybrid,41.199204194042046
+Toyota,RAV4 Hybrid,2022,2.5357015485965047,4,CVT,Hybrid,38.11418080947869
+Toyota,RAV4 Hybrid,2022,2.5899599875433252,4,CVT,Hybrid,40.114599041753216
+Toyota,RAV4 Hybrid,2022,2.581286211883896,4,CVT,Hybrid,40.759257683847224
+Toyota,RAV4 Hybrid,2021,2.417100498907793,4,CVT,Hybrid,37.87963791960606
+Toyota,RAV4 Hybrid,2021,2.5747293605123263,4,CVT,Hybrid,40.22074053086693
+Toyota,RAV4 Hybrid,2021,2.4979098406035853,4,CVT,Hybrid,39.23465476661757
+Toyota,RAV4 Hybrid,2021,2.6277664895788426,4,CVT,Hybrid,37.81685722232834
+Toyota,RAV4 Hybrid,2021,2.554709738117004,4,CVT,Hybrid,38.59561469513221
+Toyota,RAV4 Hybrid,2020,2.4782318796772778,4,CVT,Hybrid,40.69755370397438
+Toyota,RAV4 Hybrid,2020,2.582541634898803,4,CVT,Hybrid,40.12701927200128
+Toyota,RAV4 Hybrid,2020,2.630547880715433,4,CVT,Hybrid,38.54200768326552
+Toyota,RAV4 Hybrid,2020,2.5681952971294963,4,CVT,Hybrid,37.87946648681309
+Toyota,RAV4 Hybrid,2020,2.532416635248844,4,CVT,Hybrid,38.23971389126463
+Toyota,Highlander,2023,3.5096995964992717,6,8-Speed Automatic,Gasoline,25.190314050873827
+Toyota,Highlander,2023,3.4181779316766527,6,8-Speed Automatic,Gasoline,28.18477455137092
+Toyota,Highlander,2023,3.39939826185003,6,8-Speed Automatic,Gasoline,21.571622774424537
+Toyota,Highlander,2023,3.6158110873500067,6,8-Speed Automatic,Gasoline,25.58332538792587
+Toyota,Highlander,2023,3.5624119817052153,6,8-Speed Automatic,Gasoline,25.25669101852856
+Toyota,Highlander,2022,3.4987753227153084,6,8-Speed Automatic,Gasoline,21.70549125702834
+Toyota,Highlander,2022,3.507580455819373,6,8-Speed Automatic,Gasoline,22.145676576975777
+Toyota,Highlander,2022,3.597511973341775,6,8-Speed Automatic,Gasoline,23.205885236995723
+Toyota,Highlander,2022,3.417450280320749,6,8-Speed Automatic,Gasoline,22.857228316694012
+Toyota,Highlander,2022,3.5412931454275625,6,8-Speed Automatic,Gasoline,22.37255089439205
+Toyota,Highlander,2021,3.417777960443357,6,8-Speed Automatic,Gasoline,23.487374422983823
+Toyota,Highlander,2021,3.5244966571108725,6,8-Speed Automatic,Gasoline,21.98611364925774
+Toyota,Highlander,2021,3.452896169438168,6,8-Speed Automatic,Gasoline,23.464099874715274
+Toyota,Highlander,2021,3.3551915658502676,6,8-Speed Automatic,Gasoline,20.18507245124689
+Toyota,Highlander,2021,3.4281555778747563,6,8-Speed Automatic,Gasoline,22.573105696576306
+Toyota,Highlander,2020,3.5310907565598004,6,8-Speed Automatic,Gasoline,25.450712433899103
+Toyota,Highlander,2020,3.585765962320202,6,8-Speed Automatic,Gasoline,22.180122940073147
+Toyota,Highlander,2020,3.4980983792097313,6,8-Speed Automatic,Gasoline,20.494941270724382
+Toyota,Highlander,2020,3.498148686400761,6,8-Speed Automatic,Gasoline,21.922682722159724
+Toyota,Highlander,2020,3.532271856033809,6,8-Speed Automatic,Gasoline,20.845538112895355
+Honda,Civic,2023,2.051934651424117,4,CVT,Gasoline,39.06547782600516
+Honda,Civic,2023,1.9891239851543143,4,CVT,Gasoline,36.80342344419788
+Honda,Civic,2023,2.0690143991711114,4,CVT,Gasoline,35.19755905622833
+Honda,Civic,2023,2.0224092481810416,4,CVT,Gasoline,36.02518480156359
+Honda,Civic,2023,2.009767609854883,4,CVT,Gasoline,34.453980432289065
+Honda,Civic,2022,2.0024510174258943,4,CVT,Gasoline,36.495996582490896
+Honda,Civic,2022,2.145114360779504,4,CVT,Gasoline,37.41854165217041
+Honda,Civic,2022,2.2153182457511558,4,CVT,Gasoline,33.965304874223904
+Honda,Civic,2022,2.087232063672068,4,CVT,Gasoline,35.86668401147671
+Honda,Civic,2022,2.218980293321767,4,CVT,Gasoline,33.8834034292897
+Honda,Civic,2021,1.9160278157819224,4,CVT,Gasoline,33.80121470911195
+Honda,Civic,2021,1.7876104275690192,4,CVT,Gasoline,33.948489956638475
+Honda,Civic,2021,1.9240867338446301,4,CVT,Gasoline,35.300787572952416
+Honda,Civic,2021,2.034175597577716,4,CVT,Gasoline,38.752341678431776
+Honda,Civic,2021,2.095042383818605,4,CVT,Gasoline,33.846192688675195
+Honda,Civic,2020,1.9101585328651642,4,CVT,Gasoline,35.48383834301301
+Honda,Civic,2020,1.8679766792979358,4,CVT,Gasoline,38.16291753170871
+Honda,Civic,2020,2.1179440120721287,4,CVT,Gasoline,33.56164869579059
+Honda,Civic,2020,1.8286865470909122,4,CVT,Gasoline,37.207744748330825
+Honda,Civic,2020,1.9885460154747383,4,CVT,Gasoline,36.97563262394692
+Honda,Civic,2022,1.8405572341205634,4,Manual,Gasoline,33.801249954092455
+Honda,Civic,2022,2.0005243699718185,4,Manual,Gasoline,35.09396118752949
+Honda,Civic,2022,1.9549934528520756,4,Manual,Gasoline,36.245699864695
+Honda,Civic,2022,1.8932379570617406,4,Manual,Gasoline,34.71524102995741
+Honda,Civic,2022,2.0120295631711897,4,Manual,Gasoline,36.028877668117495
+Honda,Civic,2021,2.071161487808889,4,Manual,Gasoline,32.25071581632426
+Honda,Civic,2021,1.8465885829264377,4,Manual,Gasoline,37.05535364379702
+Honda,Civic,2021,2.033231401197959,4,Manual,Gasoline,33.00302692688689
+Honda,Civic,2021,2.1551151975522522,4,Manual,Gasoline,34.73134926858572
+Honda,Civic,2021,2.1179297184063826,4,Manual,Gasoline,34.635036962820216
+Honda,Civic,2020,2.2060747924881987,4,Manual,Gasoline,37.51068168488641
+Honda,Civic,2020,1.9751035851520926,4,Manual,Gasoline,35.94314190190871
+Honda,Civic,2020,2.064537594958515,4,Manual,Gasoline,36.7372631150647
+Honda,Civic,2020,1.9035076539419895,4,Manual,Gasoline,35.37210291999688
+Honda,Civic,2020,2.105842448684959,4,Manual,Gasoline,30.482521027153773
+Honda,Civic,2019,1.8816741487334225,4,Manual,Gasoline,29.4215356444798
+Honda,Civic,2019,1.9730593165555441,4,Manual,Gasoline,34.935084511591924
+Honda,Civic,2019,2.150235705209603,4,Manual,Gasoline,33.64818956083955
+Honda,Civic,2019,2.162861554557129,4,Manual,Gasoline,30.739797083570217
+Honda,Civic,2019,1.8296617560644846,4,Manual,Gasoline,33.388904602206765
+Honda,Accord,2023,1.5384065448939308,4,CVT,Gasoline,35.93461050381181
+Honda,Accord,2023,1.2932557899960124,4,CVT,Gasoline,35.82175992097442
+Honda,Accord,2023,1.3695530499495148,4,CVT,Gasoline,37.33934509766008
+Honda,Accord,2023,1.5366598246096848,4,CVT,Gasoline,34.12024042734529
+Honda,Accord,2023,1.4486133082663306,4,CVT,Gasoline,33.881572956222094
+Honda,Accord,2022,1.4937320902726827,4,CVT,Gasoline,37.41028464100248
+Honda,Accord,2022,1.4014273953664456,4,CVT,Gasoline,36.50809303103569
+Honda,Accord,2022,1.446974238162756,4,CVT,Gasoline,33.91425433547531
+Honda,Accord,2022,1.4892969640045441,4,CVT,Gasoline,33.42951535516125
+Honda,Accord,2022,1.4446350694652819,4,CVT,Gasoline,33.1042442148223
+Honda,Accord,2021,1.696472513291639,4,CVT,Gasoline,35.070527103943455
+Honda,Accord,2021,1.4300274492007414,4,CVT,Gasoline,35.42795982146844
+Honda,Accord,2021,1.488767195030917,4,CVT,Gasoline,34.55806080093355
+Honda,Accord,2021,1.5614166700043426,4,CVT,Gasoline,36.51501542009461
+Honda,Accord,2021,1.4469498852389473,4,CVT,Gasoline,33.84836351871064
+Honda,Accord,2020,1.4724948302848355,4,CVT,Gasoline,29.89615767052883
+Honda,Accord,2020,1.3484808937801447,4,CVT,Gasoline,37.23374853488905
+Honda,Accord,2020,1.6644967713501284,4,CVT,Gasoline,34.00192792088724
+Honda,Accord,2020,1.5576556963055765,4,CVT,Gasoline,35.12250030908707
+Honda,Accord,2020,1.8078880808455238,4,CVT,Gasoline,36.73914982286915
+Honda,Accord Hybrid,2023,1.9872082408519234,4,CVT,Hybrid,46.08891911879915
+Honda,Accord Hybrid,2023,1.8393553679742427,4,CVT,Hybrid,48.406927271734446
+Honda,Accord Hybrid,2023,1.9243649254715696,4,CVT,Hybrid,45.155492580804655
+Honda,Accord Hybrid,2023,1.9353427115757473,4,CVT,Hybrid,45.83690399277121
+Honda,Accord Hybrid,2023,2.1687141635072567,4,CVT,Hybrid,49.7632795138989
+Honda,Accord Hybrid,2022,1.9992027358683382,4,CVT,Hybrid,50.45988827778005
+Honda,Accord Hybrid,2022,2.007736830764762,4,CVT,Hybrid,45.77743159734347
+Honda,Accord Hybrid,2022,2.1523124077269657,4,CVT,Hybrid,48.57782008736932
+Honda,Accord Hybrid,2022,1.8962753845673543,4,CVT,Hybrid,47.11932264383278
+Honda,Accord Hybrid,2022,1.9124381746615242,4,CVT,Hybrid,44.73440053807133

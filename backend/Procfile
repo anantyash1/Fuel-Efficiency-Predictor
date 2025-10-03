@@ -1,0 +1,2 @@
+# Create backend/Procfile
+web: gunicorn app:app

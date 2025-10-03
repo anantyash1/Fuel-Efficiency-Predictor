@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-09-26T01:42:45.000520",
+  "api_status": {
+    "nhtsa": {
+      "name": "NHTSA Vehicle API",
+      "status": "active",
+      "requests_made": 5,
+      "free": true,
+      "last_used": 1758831164.159342
+    },
+    "epa": {
+      "name": "EPA Fuel Economy API",
+      "status": "active",
+      "requests_made": 1,
+      "free": true,
+      "last_used": 1758831159.3958087
+    },
+    "carapi": {
+      "name": "Car API (Alternative)",
+      "status": "backup",
+      "requests_made": 0,
+      "free": true,
+      "last_used": null
+    }
+  },
+  "total_requests_made": 6,
+  "database_stats": {
+    "total_vehicles": 19,
+    "unique_makes": 7,
+    "fuel_types": [
+      "Gasoline",
+      "Hybrid",
+      "Electric"
+    ],
+    "fuel_types_count": 3
+  }
+}

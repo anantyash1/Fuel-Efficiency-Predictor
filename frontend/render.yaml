@@ -1,0 +1,48 @@
+services:
+  # Backend Web Service
+  - type: web
+    name: fuel-predictor-backend
+    env: python
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: cd backend && pip install -r requirements.txt && python train_models.py
+    startCommand: cd backend && gunicorn --bind 0.0.0.0:$PORT app:app
+    healthCheckPath: /api/health
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.9.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fuel-predictor-db
+          property: connectionString
+    
+  # Frontend Web Service  
+  - type: web
+    name: fuel-predictor-frontend
+    env: static
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/build
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://fuel-predictor-backend.onrender.com/api
+
+  # PostgreSQL Database
+  - type: pserv
+    name: fuel-predictor-db
+    env: docker
+    plan: free
+    region: oregon
+    disk:
+      name: fuel-predictor-data
+      mountPath: /var/lib/postgresql/data
+      sizeGB: 1
