@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./app.css";
 
+
 // --- Reusable Components ---
 
 const Header = () => (
@@ -85,10 +86,10 @@ const HeroSection = () => (
   <section className="hero-section">
     <div className="hero-content">
       <h2 className="hero-title">Drive Smarter, Live Greener</h2>
-      {/* <p className="hero-subtitle">
+      <p className="hero-subtitle">
         Harness the power of AI to understand and improve your vehicle's
         environmental impact.
-      </p> */}
+      </p>
       <div className="hero-buttons">
         <button
           className="btn btn-primary"

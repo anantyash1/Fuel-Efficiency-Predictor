@@ -583,8 +583,6 @@ if __name__ == "__main__":
     print(f"📊 Found {vehicle_count:,} vehicles in database")
     
     # Confirm training
-    response = input("\nProceed with model training? (y/n): ").lower().strip()
-    if response == 'y':
-        train_models_with_csv()
-    else:
-        print("Training cancelled.")
+    
+    train_models_with_csv()
+    

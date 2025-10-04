@@ -176,7 +176,7 @@ def diagnose_csv(csv_path):
         return False
 
 if __name__ == "__main__":
-    csv_path = input("Enter path to your CSV file: ").strip().strip('"')
+    csv_path = "vehicles.csv"
     
     if not csv_path:
         csv_path = "vehicles.csv"
