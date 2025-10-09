@@ -1895,28 +1895,16 @@ app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
 }
 
 # CRITICAL: Database Configuration
-database_url = os.environ.get('DATABASE_URL')
-
-if not database_url:
-    print("❌ WARNING: DATABASE_URL not found!")
-    print("🔄 Using SQLite as fallback (not recommended for production)")
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///fuel_efficiency.db'
-else:
-    print(f"✅ DATABASE_URL found: {database_url[:40]}...")
-    
-    # Render uses postgres:// but SQLAlchemy needs postgresql://
-    if database_url.startswith('postgres://'):
-        database_url = database_url.replace('postgres://', 'postgresql://', 1)
-        print("✓ Converted postgres:// to postgresql://")
-    
-    app.config['SQLALCHEMY_DATABASE_URI'] = database_url
-    print("✅ PostgreSQL configured")
-
+# Always use SQLite (ignore DATABASE_URL for your setup)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///fuel_efficiency.db'
+app.config['DEBUG'] = os.environ.get('FLASK_ENV', 'development') != 'production'  # Debug off in production
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
     'pool_pre_ping': True,
     'pool_recycle': 300,
 }
+
+print(f"✅ Using SQLite database: fuel_efficiency.db")
 
 # CRITICAL: CORS Configuration for Frontend
 CORS(app, resources={
@@ -2384,6 +2372,14 @@ initialize_database()
 load_ml_models()
 print("="*60 + "\n")
 
+@app.route('/test-db')
+def test_db():
+    with app.app_context():
+        db.create_all()
+        return jsonify({'status': 'SQLite OK'})
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(debug=app.config['DEBUG'], port=port, host='0.0.0.0')
+    
+    
