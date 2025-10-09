@@ -984,10 +984,373 @@
 
 
 
+# import pandas as pd
+# import os
+# import sys
+# import re
+
+# # Add the backend directory to the path
+# sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+# # Import after path is set
+# from flask import Flask
+# from flask_sqlalchemy import SQLAlchemy
+# from datetime import datetime
+
+# # Create a separate Flask app instance for data loading
+# data_app = Flask(__name__)
+
+# # Database configuration
+# if os.environ.get('DATABASE_URL'):
+#     database_url = os.environ.get('DATABASE_URL')
+#     if database_url.startswith('postgres://'):
+#         database_url = database_url.replace('postgres://', 'postgresql://', 1)
+#     data_app.config['SQLALCHEMY_DATABASE_URI'] = database_url
+#     print("✅ Using PostgreSQL database")
+# else:
+#     data_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///fuel_efficiency.db'
+#     print("✅ Using SQLite database")
+
+# if os.environ.get('FLASK_ENV') != 'production':  # Skip DB in build
+#     saved_count = processor.save_to_database()
+# else:
+#     print("⚠️ Skipping DB save in production build")
+#     saved_count = 0
+
+# data_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# # Initialize database
+# data_db = SQLAlchemy(data_app)
+
+# # Define Vehicle model
+# class Vehicle(data_db.Model):
+#     __tablename__ = 'vehicle'
+    
+#     id = data_db.Column(data_db.Integer, primary_key=True)
+#     make = data_db.Column(data_db.String(100), nullable=False)
+#     model = data_db.Column(data_db.String(100), nullable=False)
+#     year = data_db.Column(data_db.Integer, nullable=False)
+#     engine_size = data_db.Column(data_db.Float, nullable=False)
+#     cylinders = data_db.Column(data_db.Integer, nullable=False)
+#     transmission = data_db.Column(data_db.String(50), nullable=False)
+#     fuel_type = data_db.Column(data_db.String(50), nullable=False)
+#     city_mpg = data_db.Column(data_db.Float, nullable=False)
+#     highway_mpg = data_db.Column(data_db.Float, nullable=False)
+#     combined_mpg = data_db.Column(data_db.Float, nullable=False)
+#     co2_emissions = data_db.Column(data_db.Float, nullable=False)
+#     created_at = data_db.Column(data_db.DateTime, default=datetime.utcnow)
+
+# def clean_column_names(df):
+#     """Clean and standardize column names"""
+#     df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '').str.replace('-', '_')
+#     return df
+
+# def convert_engine_size(value):
+#     """Convert engine size from cm3 to liters"""
+#     try:
+#         if pd.isna(value):
+#             return None
+#         # Remove any non-numeric characters except decimal point
+#         cleaned = re.sub(r'[^\d.]', '', str(value))
+#         if not cleaned:
+#             return None
+#         # Convert from cm3 to liters (divide by 1000)
+#         cm3 = float(cleaned)
+#         liters = cm3 / 1000.0
+#         return round(liters, 1)
+#     except:
+#         return None
+
+# def convert_fuel_consumption(value):
+#     """Convert L/100km to MPG"""
+#     try:
+#         if pd.isna(value) or value == 0:
+#             return None
+#         l_per_100km = float(value)
+#         # Formula: MPG = 235.215 / (L/100km)
+#         mpg = 235.215 / l_per_100km
+#         return round(mpg, 1)
+#     except:
+#         return None
+
+# def estimate_cylinders(engine_size):
+#     """Estimate number of cylinders based on engine size"""
+#     if engine_size is None or engine_size == 0:
+#         return 0  # Electric
+#     elif engine_size < 1.0:
+#         return 3
+#     elif engine_size < 2.0:
+#         return 4
+#     elif engine_size < 3.5:
+#         return 6
+#     else:
+#         return 8
+
+# def determine_fuel_type(fuel_consumption):
+#     """Determine fuel type based on consumption"""
+#     if fuel_consumption is None or fuel_consumption > 100:
+#         return 'Electric'
+#     elif fuel_consumption > 45:
+#         return 'Hybrid'
+#     else:
+#         return 'Gasoline'
+
+# def load_csv_to_database(csv_file='vehicles.csv'):
+#     """
+#     Load data from CSV file into the database.
+#     Handles your specific CSV format with columns:
+#     - Make
+#     - Modle (Model)
+#     - Year_from
+#     - capacity_cm3
+#     - mixed_fuel_consumption_per_100_km_l
+#     """
+    
+#     # Check if file exists
+#     if not os.path.exists(csv_file):
+#         print(f"❌ Error: File '{csv_file}' not found!")
+#         print(f"📁 Current directory: {os.getcwd()}")
+#         print(f"📂 Files in directory: {os.listdir('.')}")
+#         return False
+    
+#     try:
+#         print("="*60)
+#         print("📊 VEHICLE DATA PROCESSOR")
+#         print("="*60)
+#         print(f"\n📥 Reading CSV file: {csv_file}")
+        
+#         # Read CSV
+#         df = pd.read_csv(csv_file, low_memory=False)
+#         print(f"✅ Successfully read {len(df)} rows from CSV")
+        
+#         # Clean column names
+#         df = clean_column_names(df)
+#         print(f"\n📋 Columns found: {list(df.columns)}")
+        
+#         # Create column mapping for your CSV format
+#         column_mapping = {
+#             'make': 'make',
+#             'modle': 'model',  # Note: Your CSV has 'Modle' (typo)
+#             'model': 'model',
+#             'year_from': 'year',
+#             'capacity_cm3': 'engine_size_cm3',
+#             'mixed_fuel_consumption_per_100_km_l': 'fuel_consumption_l100km'
+#         }
+        
+#         # Rename columns
+#         rename_dict = {}
+#         for csv_col in df.columns:
+#             for std_col, target_col in column_mapping.items():
+#                 if std_col in csv_col.lower():
+#                     rename_dict[csv_col] = target_col
+#                     break
+        
+#         df = df.rename(columns=rename_dict)
+#         print(f"\n📝 Mapped columns: {rename_dict}")
+        
+#         # Check required columns
+#         required_base_columns = ['make', 'model', 'year', 'engine_size_cm3', 'fuel_consumption_l100km']
+#         missing = [col for col in required_base_columns if col not in df.columns]
+        
+#         if missing:
+#             print(f"\n❌ Missing required columns: {missing}")
+#             print(f"📋 Available columns: {list(df.columns)}")
+#             return False
+        
+#         print("\n🔄 Processing data...")
+        
+#         # Convert engine size from cm3 to liters
+#         print("  ⚙️  Converting engine sizes (cm3 → liters)...")
+#         df['engine_size'] = df['engine_size_cm3'].apply(convert_engine_size)
+        
+#         # Convert fuel consumption from L/100km to MPG
+#         print("  ⛽ Converting fuel consumption (L/100km → MPG)...")
+#         df['combined_mpg'] = df['fuel_consumption_l100km'].apply(convert_fuel_consumption)
+        
+#         # Estimate city and highway MPG (typical split)
+#         df['city_mpg'] = df['combined_mpg'] * 0.9  # City is typically 10% worse
+#         df['highway_mpg'] = df['combined_mpg'] * 1.08  # Highway is typically 8% better
+        
+#         # Estimate cylinders
+#         print("  🔢 Estimating cylinders...")
+#         df['cylinders'] = df['engine_size'].apply(estimate_cylinders)
+        
+#         # Determine fuel type
+#         print("  ⚡ Determining fuel types...")
+#         df['fuel_type'] = df['combined_mpg'].apply(determine_fuel_type)
+        
+#         # Add default transmission (most common)
+#         df['transmission'] = 'Automatic'
+        
+#         # Calculate CO2 emissions from fuel consumption
+#         # Formula: CO2 (g/km) = L/100km * 23.2 (approximate for gasoline)
+#         df['co2_emissions'] = df['fuel_consumption_l100km'] * 23.2
+#         df.loc[df['fuel_type'] == 'Electric', 'co2_emissions'] = 0
+        
+#         # Clean year data
+#         df['year'] = pd.to_numeric(df['year'], errors='coerce')
+        
+#         # Remove rows with missing critical data
+#         print("\n🧹 Cleaning data...")
+#         initial_count = len(df)
+        
+#         df = df.dropna(subset=['make', 'model', 'year', 'engine_size', 'combined_mpg'])
+#         df = df[df['year'] >= 1990]  # Only recent vehicles
+#         df = df[df['year'] <= 2030]
+#         df = df[df['engine_size'] >= 0]
+#         df = df[df['combined_mpg'] > 0]
+#         df = df[df['combined_mpg'] < 200]  # Remove unrealistic values
+        
+#         # Convert to appropriate types
+#         df['year'] = df['year'].astype(int)
+#         df['cylinders'] = df['cylinders'].astype(int)
+        
+#         cleaned_count = len(df)
+#         removed_count = initial_count - cleaned_count
+        
+#         print(f"  ✓ Removed {removed_count} invalid rows")
+#         print(f"  ✓ {cleaned_count} valid rows remaining")
+        
+#         # Select final columns
+#         final_columns = ['make', 'model', 'year', 'engine_size', 'cylinders', 
+#                         'transmission', 'fuel_type', 'city_mpg', 'highway_mpg', 
+#                         'combined_mpg', 'co2_emissions']
+        
+#         df = df[final_columns]
+        
+#         print(f"\n📊 Final dataset statistics:")
+#         print(f"  • Total records: {len(df)}")
+#         print(f"  • Makes: {df['make'].nunique()}")
+#         print(f"  • Models: {df['model'].nunique()}")
+#         print(f"  • Year range: {int(df['year'].min())} - {int(df['year'].max())}")
+#         print(f"  • MPG range: {df['combined_mpg'].min():.1f} - {df['combined_mpg'].max():.1f}")
+        
+#         # Create tables and load data
+#         with data_app.app_context():
+#             print("\n🗄️  Creating database tables...")
+#             data_db.create_all()
+#             print("✅ Database tables created")
+            
+#             # Clear existing data
+#             print("\n🗑️  Clearing existing data...")
+#             Vehicle.query.delete()
+#             data_db.session.commit()
+#             print("✅ Existing data cleared")
+            
+#             # Insert data in batches
+#             print("\n💾 Inserting data into database...")
+#             records_added = 0
+#             batch_size = 100
+#             errors = 0
+            
+#             for i in range(0, len(df), batch_size):
+#                 batch = df.iloc[i:i+batch_size]
+                
+#                 for _, row in batch.iterrows():
+#                     try:
+#                         vehicle = Vehicle(
+#                             make=str(row['make'])[:100],
+#                             model=str(row['model'])[:100],
+#                             year=int(row['year']),
+#                             engine_size=float(row['engine_size']),
+#                             cylinders=int(row['cylinders']),
+#                             transmission=str(row['transmission']),
+#                             fuel_type=str(row['fuel_type']),
+#                             city_mpg=float(row['city_mpg']),
+#                             highway_mpg=float(row['highway_mpg']),
+#                             combined_mpg=float(row['combined_mpg']),
+#                             co2_emissions=float(row['co2_emissions'])
+#                         )
+#                         data_db.session.add(vehicle)
+#                         records_added += 1
+#                     except Exception as e:
+#                         errors += 1
+#                         if errors <= 5:  # Show first 5 errors only
+#                             print(f"    ⚠️  Error adding row: {e}")
+                
+#                 # Commit batch
+#                 try:
+#                     data_db.session.commit()
+#                     progress = min(i + batch_size, len(df))
+#                     if progress % 1000 == 0 or progress == len(df):
+#                         print(f"  ✓ Processed {progress}/{len(df)} rows ({records_added} added, {errors} errors)")
+#                 except Exception as e:
+#                     print(f"    ❌ Batch commit error: {e}")
+#                     data_db.session.rollback()
+            
+#             print("\n" + "="*60)
+#             print(f"✅ DATA IMPORT COMPLETED!")
+#             print("="*60)
+#             print(f"📊 Summary:")
+#             print(f"  • Total records imported: {records_added}")
+#             print(f"  • Errors encountered: {errors}")
+#             print(f"  • Success rate: {(records_added/len(df)*100):.1f}%")
+            
+#             # Show sample data
+#             print(f"\n📋 Sample vehicles in database:")
+#             sample_vehicles = Vehicle.query.limit(10).all()
+#             for v in sample_vehicles:
+#                 print(f"  • {v.year} {v.make} {v.model} - {v.combined_mpg:.1f} MPG ({v.fuel_type})")
+            
+#             # Show statistics by fuel type
+#             print(f"\n📈 Fuel type distribution:")
+#             for fuel_type in ['Gasoline', 'Hybrid', 'Electric']:
+#                 count = Vehicle.query.filter_by(fuel_type=fuel_type).count()
+#                 if count > 0:
+#                     print(f"  • {fuel_type}: {count} vehicles")
+            
+#             return True
+            
+#     except Exception as e:
+#         print(f"\n❌ Error loading CSV: {str(e)}")
+#         import traceback
+#         traceback.print_exc()
+#         return False
+
+# if __name__ == '__main__':
+#     print("\n" + "="*60)
+#     print("🚗 VEHICLE DATA PROCESSOR")
+#     print("="*60)
+    
+#     # Automatically use vehicles.csv
+#     csv_file = 'vehicles.csv'
+    
+#     print(f"\n🔍 Looking for file: {csv_file}")
+#     print(f"📁 Current directory: {os.getcwd()}\n")
+    
+#     success = load_csv_to_database(csv_file)
+    
+#     if success:
+#         print("\n" + "="*60)
+#         print("✅ DATA PROCESSING COMPLETED SUCCESSFULLY!")
+#         print("="*60)
+#         print("\n🎯 Next steps:")
+#         print("  1. Run: python app.py")
+#         print("  2. Test API: http://localhost:5000/api/health")
+#         print("  3. Train models: python train_models.py")
+#         print("\n")
+#     else:
+#         print("\n" + "="*60)
+#         print("❌ DATA PROCESSING FAILED!")
+#         print("="*60)
+#         print("\n📝 Please check:")
+#         print("  • CSV file exists and is readable")
+#         print("  • Column names match expected format")
+#         print("  • Data quality and formatting")
+#         print("\n")
+#         sys.exit(1)
+
+
 import pandas as pd
 import os
 import sys
 import re
+from datetime import datetime
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Add the backend directory to the path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -995,28 +1358,25 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 # Import after path is set
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 
 # Create a separate Flask app instance for data loading
 data_app = Flask(__name__)
 
-# Database configuration
-if os.environ.get('DATABASE_URL'):
-    database_url = os.environ.get('DATABASE_URL')
-    if database_url.startswith('postgres://'):
-        database_url = database_url.replace('postgres://', 'postgresql://', 1)
-    data_app.config['SQLALCHEMY_DATABASE_URI'] = database_url
-    print("✅ Using PostgreSQL database")
-else:
-    data_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///fuel_efficiency.db'
-    print("✅ Using SQLite database")
-
+# Database configuration - Force SQLite (no PostgreSQL fallback)
+data_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///fuel_efficiency.db'
+data_app.config['DEBUG'] = os.environ.get('FLASK_ENV', 'development') != 'production'
 data_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+data_app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+    'pool_pre_ping': True,
+    'pool_recycle': 300,
+}
+
+print("✅ Using SQLite database: fuel_efficiency.db")
 
 # Initialize database
 data_db = SQLAlchemy(data_app)
 
-# Define Vehicle model
+# Define Vehicle model (using your four factors: make, model, year, engine_size)
 class Vehicle(data_db.Model):
     __tablename__ = 'vehicle'
     
@@ -1025,6 +1385,7 @@ class Vehicle(data_db.Model):
     model = data_db.Column(data_db.String(100), nullable=False)
     year = data_db.Column(data_db.Integer, nullable=False)
     engine_size = data_db.Column(data_db.Float, nullable=False)
+    # Optional fields for completeness (from processing)
     cylinders = data_db.Column(data_db.Integer, nullable=False)
     transmission = data_db.Column(data_db.String(50), nullable=False)
     fuel_type = data_db.Column(data_db.String(50), nullable=False)
@@ -1196,7 +1557,7 @@ def load_csv_to_database(csv_file='vehicles.csv'):
         df = df[df['combined_mpg'] < 200]  # Remove unrealistic values
         
         # Convert to appropriate types
-        df['year'] = df['year'].astype(int)
+        df['year'].astype(int)
         df['cylinders'] = df['cylinders'].astype(int)
         
         cleaned_count = len(df)
@@ -1333,3 +1694,4 @@ if __name__ == '__main__':
         print("  • Data quality and formatting")
         print("\n")
         sys.exit(1)
+
