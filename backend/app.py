@@ -1894,15 +1894,46 @@ app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
     'pool_recycle': 300,
 }
 
-# CORS configuration
-CORS(app, origins=[
-    "http://localhost:3000",
-    "https://fuel-predictor-frontend.onrender.com",
-    "https://*.onrender.com"
-])
+# CRITICAL: Database Configuration
+database_url = os.environ.get('DATABASE_URL')
+
+if not database_url:
+    print("❌ WARNING: DATABASE_URL not found!")
+    print("🔄 Using SQLite as fallback (not recommended for production)")
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///fuel_efficiency.db'
+else:
+    print(f"✅ DATABASE_URL found: {database_url[:40]}...")
+    
+    # Render uses postgres:// but SQLAlchemy needs postgresql://
+    if database_url.startswith('postgres://'):
+        database_url = database_url.replace('postgres://', 'postgresql://', 1)
+        print("✓ Converted postgres:// to postgresql://")
+    
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_url
+    print("✅ PostgreSQL configured")
+
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+    'pool_pre_ping': True,
+    'pool_recycle': 300,
+}
+
+# CRITICAL: CORS Configuration for Frontend
+CORS(app, resources={
+    r"/api/*": {
+        "origins": [
+            "http://localhost:3000",
+            "http://localhost:3001", 
+            "https://fuel-efficiency-predictor-3.onrender.com",  # REPLACE WITH YOUR FRONTEND URL
+            "https://*.onrender.com"
+        ],
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"],
+        "supports_credentials": True
+    }
+})
 
 db = SQLAlchemy(app)
-
 # Vehicle Model
 class Vehicle(db.Model):
     __tablename__ = 'vehicle'
